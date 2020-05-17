@@ -1,0 +1,122 @@
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+main {
+  margin: 0 auto;
+  width: 900px;
+  position: relative;
+  height: 110px;
+}
+.tabela {
+  align-self: auto;
+  margin: 0 auto;
+  width: 800px;
+  top: 30;
+  position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 20px;
+  height: 60px;
+}
+
+.nome {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 70px;
+  float: left;
+}
+
+.tabelapng {
+  margin-top: 5;
+  max-width: 100px;
+  float: left;
+}
+
+.fatec {
+  margin-top: 25;
+  max-width: 100px;
+}
+
+.frase {
+  margin: 0 auto;
+  width: 950px;
+  position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 20px;
+  height: 40px;
+}
+
+input[type="text"] {
+  text-align: center;
+  border: 1.5px solid black;
+  border-radius: 4px;
+}
+
+.codificado {
+  margin: 0 auto;
+  width: 800px;
+  position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 20px;
+  height: 60px;
+}
+
+.decodificado {
+  margin: 0 auto;
+  width: 800px;
+  position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 20px;
+  height: 60px;
+}
+
+table {
+  margin-top: 10;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  border: 1.5px solid black;
+  border-radius: 4px;
+}
+
+th {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #a8a8a8;
+}
+
+.botao {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0 auto;
+  width: 130px;
+  padding: 10px 10px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: rgb(56, 56, 56);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px rgb(119, 119, 119);
+}
+
+.botao:hover {
+  background-color: rgb(56, 56, 56);
+}
+
+.botao:active {
+  background-color: rgb(56, 56, 56);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
