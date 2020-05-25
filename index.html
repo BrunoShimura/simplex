@@ -1,61 +1,98 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <link rel="stylesheet" type="text/css" href="css/main.css">
-  <title>Tabela de Frequência</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <script type="text/js" href="js/bootstrap.js"></script>
+  <title>Simplex</title>
 </head>
 
 <body>
-  <header class="principal">
-    <main>
-      <div align="center" class="menu">
-        <img class="tabelapng" src="./img/tabela.png">
-        <img class="fatec" src="./img/fatec.png">
-        <div class="nome">Simplex</div>
+  <div class="jumbotron text-center">
+    <img class="img-responsive" src="img/univem.png" width="105" height="100">
+    <h1>Simplex</h1>
+    <p><strong>Simplex</strong> é um algoritmo criado pelo matemático George Dantzig que viabiliza a solução de muitos
+      problemas da
+      programação linear.</p>
+  </div>
+
+  <div class="container p-3 my-3 border">
+    <div class="card bg-light text-dark">
+      <div class="card-body">
+        <h4 class="card-title">Informe os valores:</h4>
+        <form action="/action_page.php">
+          <div class="form-group">
+            <div class="form-group ">
+              <h6>Quantas variáveis de decisão tem o problema? </h6>
+              <div class="col-100">
+                <input class="form-control" type="number" value="42" id="example-number-input">
+              </div>
+            </div>
+            <div class="form-group ">
+              <h6>Quantas restrições?</h6>
+              <div class="col-100">
+                <input class="form-control" type="number" value="42" id="example-number-input">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Continuar</button>
+        </form>
       </div>
-    </main>
-  </header>
-  <form align="center" name="form" action="">
-    <div class="frase">
-      <input placeholder="Digite o nome da variavel..." type="text" name="variavel" size="100" />
     </div>
-    <div class="frase">
-      <input placeholder="Digite os valores...(Ex:1,2,3,2,1)" type="text" name="valores" size="100" />
+  </div>
+  <h1></h1>
+  <div class="card bg-light text-dark">
+    <div class="card-body">
+      <h4 class="card-title">Informe os dados iniciais:</h4>
+      <form action="/action_page.php">
+        <div class="form-group">
+          <div class="form-group ">
+            <h6>Função objetivo:</h6>
+            <div class="form-group row">
+              <label for="example-number-input" class="col-1 col-form-label">Z=</label>
+              <div class="col-2">
+                <input class="form-control" type="number" value="42" id="example-number-input">
+              </div>
+              <label for="example-number-input" class="col-form-label">x1 +</label>
+              <div class="col-2">
+                <input class="form-control" type="number" value="42" id="example-number-input">
+              </div>
+              <label for="example-number-input" class=" col-form-label">x2 +</label>
+              <div class="col-2">
+                <input class="form-control" type="number" value="42" id="example-number-input">
+              </div>
+              <label for="example-number-input" class=" col-form-label">x3</label>
+            </div>
+          </div>
+          <div class="form-group ">
+            <h6>Restrições:</h6>
+            <div class="form-group row">
+              <div class="col-2">
+                <input class="form-control" type="number" value="42" id="example-number-input">
+              </div>
+              <label for="example-number-input" class="col-form-label">x1 +</label>
+              <div class="col-2">
+                <input class="form-control" type="number" value="42" id="example-number-input">
+              </div>
+              <label for="example-number-input" class=" col-form-label">x2 +</label>
+              <div class="col-2">
+                <input class="form-control" type="number" value="42" id="example-number-input">
+              </div>
+              <label for="example-number-input" class=" col-form-label">x3 <= </label>
+                  <div class="col-2">
+                    <input class="form-control" type="number" value="42" id="example-number-input">
+                  </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Continuar</button>
+      </form>
     </div>
-    <div class="botao">
-      <a>Executar</a>
-    </div>
-    <table align="center" id="tb">
-      <tr>
-        <th>Null</th>
-        <th>xi</th>
-        <th>ni</th>
-        <th>Ni</th>
-        <th>Ni'</th>
-        <th>fi</th>
-        <th>Fi</th>
-        <th>Fi'</th>
-        <th>ci</th>
-        <th>Ci</th>
-        <th>Ci'</th>
-      </tr>
-      <tr>
-        <th>Null</th>
-        <th>Null</th>
-        <th>Null</th>
-        <th>Null</th>
-        <th>Null</th>
-        <th>Null</th>
-        <th>Null</th>
-        <th>Null</th>
-        <th>Null</th>
-        <th>Null</th>
-        <th>Null</th>
-      </tr>
-    </table>
-  </form>
-  <script src="main.js">
-  </script>
+  </div>
+  </div>
+  </div>
+
+  <script src="main.js"></script>
 </body>
 
 </html>
