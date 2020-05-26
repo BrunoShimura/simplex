@@ -5,10 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-  <script type="text/js" href="js/bootstrap.js"></script>
+  <script type="text/javascript" href="js/bootstrap.js"></script>
+  <script type="text/javascript" src="main.js" charset="UTF-8"></script>
+  <link rel="icon" href="img/univem.png" />
   <title>Simplex</title>
 </head>
-
 <body>
   <div class="jumbotron text-center">
     <img class="img-responsive" src="img/univem.png" width="105" height="100">
@@ -22,45 +23,47 @@
     <div class="card bg-light text-dark">
       <div class="card-body">
         <h4 class="card-title">Informe os valores:</h4>
-        <form action="/action_page.php">
+        <form>
           <div class="form-group">
             <div class="form-group ">
               <h6>Quantas variáveis de decisão tem o problema? </h6>
               <div class="col-100">
-                <input class="form-control" type="number" value="42" id="example-number-input">
+                <input type="number" class="form-control" size="5%" maxlength="10" id="in1" name="variaveis" value="" min="1" autocomplete="off" autofocus style="height: 28px"/>
               </div>
             </div>
             <div class="form-group ">
               <h6>Quantas restrições?</h6>
               <div class="col-100">
-                <input class="form-control" type="number" value="42" id="example-number-input">
+                <input type="number" class="form-control" size="5%" maxlength="10" id="in2" name="regras" value="" min="1" autocomplete="off" style="height: 28px" />
               </div>
             </div>
-            <button type="submit" class="btn btn-primary">Continuar</button>
+            <button type="button" class="btn btn-primary" id="btn1" name="ok" value="ok" onClick="criarForm(variaveis.value,regras.value)">Continuar</button>
         </form>
       </div>
     </div>
   </div>
+
   <h1></h1>
+
   <div class="card bg-light text-dark">
     <div class="card-body">
       <h4 class="card-title">Informe os dados iniciais:</h4>
-      <form action="/action_page.php">
-        <div class="form-group">
-          <div class="form-group ">
-            <h6>Função objetivo:</h6>
+        <form action="/action_page.php">
+          <div class="form-group">
+            <div class="form-group ">
+              <h6>Função objetivo:</h6>
             <div class="form-group row">
               <label for="example-number-input" class="col-1 col-form-label">Z=</label>
               <div class="col-2">
-                <input class="form-control" type="number" value="42" id="example-number-input">
+                <input class="form-control" type="number" value="" id="example-number-input">
               </div>
               <label for="example-number-input" class="col-form-label">x1 +</label>
               <div class="col-2">
-                <input class="form-control" type="number" value="42" id="example-number-input">
+                <input class="form-control" type="number" value="" id="example-number-input">
               </div>
               <label for="example-number-input" class=" col-form-label">x2 +</label>
               <div class="col-2">
-                <input class="form-control" type="number" value="42" id="example-number-input">
+                <input class="form-control" type="number" value="" id="example-number-input">
               </div>
               <label for="example-number-input" class=" col-form-label">x3</label>
             </div>
@@ -69,30 +72,75 @@
             <h6>Restrições:</h6>
             <div class="form-group row">
               <div class="col-2">
-                <input class="form-control" type="number" value="42" id="example-number-input">
+                <input class="form-control" type="number" value="" id="example-number-input">
               </div>
               <label for="example-number-input" class="col-form-label">x1 +</label>
               <div class="col-2">
-                <input class="form-control" type="number" value="42" id="example-number-input">
+                <input class="form-control" type="number" value="" id="example-number-input">
               </div>
               <label for="example-number-input" class=" col-form-label">x2 +</label>
               <div class="col-2">
-                <input class="form-control" type="number" value="42" id="example-number-input">
+                <input class="form-control" type="number" value="" id="example-number-input">
               </div>
               <label for="example-number-input" class=" col-form-label">x3 <= </label>
                   <div class="col-2">
-                    <input class="form-control" type="number" value="42" id="example-number-input">
+                    <input class="form-control" type="number" value="" id="example-number-input">
                   </div>
             </div>
           </div>
-          <button type="submit" class="btn btn-primary">Continuar</button>
-      </form>
+            <button type="submit" class="btn btn-primary">Continuar</button>
+            <button type="submit" class="btn btn-secondary">Voltar</button>
+        </form>
+      </div>
     </div>
   </div>
-  </div>
+  
+  <h1></h1>
+
+  <div class="card bg-light text-dark">
+    <div class="card-body">
+      <h4 class="card-title">Solução básica:</h4>
+        <form action="/action_page.php">
+          <div class="form-group">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Primeiro</th>
+                  <th scope="col">Último</th>
+                  <th scope="col">Nickname</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td>@fat</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Larry</td>
+                  <td>the Bird</td>
+                  <td>@twitter</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+            <button type="submit" class="btn btn-primary">Continuar</button>
+            <button type="submit" class="btn btn-secondary">Voltar</button>
+        </form>
+      </div>
+    </div>
   </div>
 
-  <script src="main.js"></script>
+  </div>
 </body>
 
 </html>
