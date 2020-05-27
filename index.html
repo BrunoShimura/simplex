@@ -18,7 +18,7 @@
       problemas da
       programação linear.</p>
   </div>
-
+  <form>
   <div class="container p-3 my-3 border">
     <div class="card bg-light text-dark">
       <div class="card-body">
@@ -38,12 +38,13 @@
               </div>
             </div>
             <button type="button" class="btn btn-primary" id="btn1" name="ok" value="ok" onClick="criarForm(variaveis.value,regras.value)">Continuar</button>
-            <img onClick="manual()" type="submit" class="img-responsive" src="img/help.png" width="30" height="30"/>
+            <img onClick="manual()" type="submit" id="help" class="img-responsive" src="img/help.png" width="30" height="30"/>
           </form>
       </div>
     </div>
   </div>
   <div id="form1"></div>
+  <div id="table1"></div>
 <!--
   <h1></h1>
 
@@ -108,43 +109,54 @@
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Primeiro</th>
-                  <th scope="col">Último</th>
-                  <th scope="col">Nickname</th>
+                  <th scope="col">Base</th>
+                  <th scope="col">x1</th>
+                  <th scope="col">x2</th>
+                  <th scope="col">f1</th>
+                  <th scope="col">f2</th>
+                  <th scope="col">f3</th>
+                  <th scope="col">B</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
+                  <th scope="row">f1</th>
+                  <td>0</td>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>3</td>
+                  <td>4</td>
+                  <td>5</td>
                 </tr>
                 <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
+                  <th scope="row">f2</th>
+                  <td>0</td>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>3</td>
+                  <td>4</td>
+                  <td>5</td>
                 </tr>
                 <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
+                  <th scope="row">f3</th>
+                  <td>0</td>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>3</td>
+                  <td>4</td>
+                  <td>5</td>
                 </tr>
               </tbody>
             </table>
           </div>
-            <button type="submit" class="btn btn-secondary">Voltar</button>
             <button type="submit" class="btn btn-primary">Continuar</button>
-            <img onClick="manual()" type="submit" class="img-responsive" src="img/help.png" width="30" height="30"/>
         </form>
       </div>
     </div>
   </div>
 -->
   </div>
+  </form>
 </body>
 
 </html>
