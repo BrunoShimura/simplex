@@ -1,3 +1,4 @@
+var nTable = 1;
 //==============================================================================
 // cria manual
 //==============================================================================
@@ -36,7 +37,7 @@ function criarForm(variaveis, restricoes) {
         i +
         '" name="y' +
         i +
-        '" type="float" value="" id="example-number-input"></div><label for="example-number-input" class="col-form-label">x' +
+        '" type="number" step="any" value="" id="example-number-input"></div><label for="example-number-input" class="col-form-label">x' +
         i +
         mais +
         "</label>";
@@ -53,7 +54,7 @@ function criarForm(variaveis, restricoes) {
           '" name="x' +
           i +
           j +
-          '" type="float" value="" id="example-number-input"> </div> <label for="example-number-input" class="col-form-label">x' +
+          '" type="number" step="any" value="" id="example-number-input"> </div> <label for="example-number-input" class="col-form-label">x' +
           j +
           mais +
           "</label>";
@@ -63,14 +64,14 @@ function criarForm(variaveis, restricoes) {
         i +
         '" name="b' +
         i +
-        '" type="float" value="" id="example-number-input"></div></div>';
+        '" type="number" step="any" value="" id="example-number-input"></div></div>';
     }
     txt +=
       '<h1></h1><div class="card bg-light text-dark"> <div class="card-body"> <h4 class="card-title">Informe os dados iniciais:</h4> <form action="" method="post" name="form2" id="form2"> <div class="form-group"> <div class="form-group "> <h6>Função objetivo:</h6> <div class="form-group row"> ' +
       funcao +
       " </div>" +
       restricao +
-      '<button id="btn2" type="button" onClick="criarMatriz(variaveis.value,regras.value)" class="btn btn-primary">Continuar</button> <button onClick="atualizar()" type="reset" class="btn btn-secondary" id="novo1">Novo</button> <img onClick="manual()" type="submit" id="help1" class="img-responsive" src="img/help.png" width="30" height="30"/>  </form> </div> </div> </div> ';
+      '<button id="btn2" type="button" onClick="basica() " class="btn btn-primary">Continuar</button> <button onClick="atualizar()" type="reset" class="btn btn-secondary" id="novo1">Novo</button> <img onClick="manual()" type="submit" id="help1" class="img-responsive" src="img/help.png" width="30" height="30"/>  </form> </div> </div> </div> ';
     document.getElementById("form1").innerHTML = txt;
     document.getElementById("btn1").style.display = "none";
     document.getElementById("help").style.display = "none";
@@ -83,9 +84,12 @@ function criarForm(variaveis, restricoes) {
 //==============================================================================
 // cria tabela
 //==============================================================================
-function criarTable(variaveis, restricoes, matriz) {
+function criarTable(matriz) {
+  var restricoes = parseInt(document.form1.regras.value);
+  var variaveis = parseInt(document.form1.variaveis.value);
   var titulo = "";
   var txt = "";
+  var ola = nTable + 1;
   var corpo = "";
   var total = 1 + parseInt(variaveis) + parseInt(restricoes);
   for (var i = 0; i <= total; i++) {
@@ -103,8 +107,17 @@ function criarTable(variaveis, restricoes, matriz) {
     titulo +
     "  </tr> </thead> <tbody> " +
     corpo +
-    '</tbody> </table> </div> <button id="btn3" type="button" onClick="criarMatriz(variaveis.value,regras.value)" class="btn btn-primary">Continuar</button> <button onClick="atualizar()" type="reset" class="btn btn-secondary" id="novo2">Novo</button> <img onClick="manual()" type="submit" id="help2" class="img-responsive" src="img/help.png" width="30" height="30"/> </form> </div> </div> </div>';
-  document.getElementById("table1").innerHTML = txt;
+    '</tbody> </table> </div> <button id="btnT' +
+    ola +
+    '" type="button" onClick="interacao()" class="btn btn-primary">Continuar</button> <button onClick="atualizar()" type="reset" class="btn btn-secondary" id="novoT' +
+    ola +
+    '">Novo</button> <img onClick="manual()" type="submit" id="helpT' +
+    ola +
+    '" class="img-responsive" src="img/help.png" width="30" height="30"/> </form> </div> </div> </div><div id="table' +
+    ola +
+    '"></div>';
+  document.getElementById("table" + nTable).innerHTML = txt;
+  nTable++;
   document.getElementById("btn2").style.display = "none";
   document.getElementById("help1").style.display = "none";
   document.getElementById("novo1").style.display = "none";
@@ -192,10 +205,11 @@ function criarMatriz(variaveis, restricoes) {
       if (matriz[i][j] == null) matriz[i][j] = 0;
     }
   }
-  alert(matriz);
-  criarTable(variaveis, restricoes, matriz);
+  return matriz;
 }
-
+//==============================================================================
+// escode inputs
+//==============================================================================
 function esconder(p_variaveis, p_restricoes) {
   for (i = 1; i <= p_variaveis; i++) {
     document.getElementById("y" + i).style = "-moz-appearance:textfield;";
@@ -212,4 +226,77 @@ function esconder(p_variaveis, p_restricoes) {
     document.getElementById("b" + j).style.border = "0";
     document.getElementById("b" + j).readOnly = true;
   }
+  for (j = 2; j <= nTable; j++) {
+    document.getElementById("btnT" + j).style.display = "none";
+    document.getElementById("helpT" + j).style.display = "none";
+    document.getElementById("novoT" + j).style.display = "none";
+  }
+}
+//==============================================================================
+// valida valores
+//==============================================================================
+function basica() {
+  var restricoes = parseInt(document.form1.regras.value);
+  var variaveis = parseInt(document.form1.variaveis.value);
+  var matriz = criarMatriz(variaveis, restricoes);
+  criarTable(matriz);
+}
+function interacao() {
+  var restricoes = parseInt(document.form1.regras.value);
+  var variaveis = parseInt(document.form1.variaveis.value);
+  var matriz = criarMatriz(variaveis, restricoes);
+  criarTable2(matriz);
+}
+
+function condicaoParada(p_matriz) {
+  var i = p_matriz.length - 1;
+
+  for (j = 1; j < p_matriz[i].length; j++) {
+    if (p_matriz[i][j] > 0) {
+      return true;
+    }
+  }
+  return false;
+}
+
+function criarTable2(matriz) {
+  var restricoes = parseInt(document.form1.regras.value);
+  var variaveis = parseInt(document.form1.variaveis.value);
+  var titulo = "";
+  var txt = "";
+  var ola = nTable + 1;
+  var corpo = "";
+  var a = nTable - 1;
+  var total = 1 + parseInt(variaveis) + parseInt(restricoes);
+  for (var i = 0; i <= total; i++) {
+    titulo += '<th scope="col">' + matriz[0][i] + "</th>";
+  }
+  for (var i = 0; i <= restricoes; i++) {
+    corpo += '<tr><th scope="row">' + matriz[i + 1][0] + "</th>";
+    for (var j = 1; j <= total; j++) {
+      corpo += "<td>" + matriz[i + 1][j] + "</td>";
+    }
+    corpo += "</tr>";
+  }
+  txt =
+    '<h1></h1> <div class="card bg-light text-dark"> <div class="card-body"> <h4 class="card-title">Interação: ' +
+    a +
+    '</h4> <form action="/action_page.php"> <div class="form-group"> <table class="table table-striped"> <thead> <tr> ' +
+    titulo +
+    "  </tr> </thead> <tbody> " +
+    corpo +
+    '</tbody> </table> </div> <button id="btnT' +
+    ola +
+    '" type="button" onClick="interacao()" class="btn btn-primary">Continuar</button> <button onClick="atualizar()" type="reset" class="btn btn-secondary" id="novoT' +
+    ola +
+    '">Novo</button> <img onClick="manual()" type="submit" id="helpT' +
+    ola +
+    '" class="img-responsive" src="img/help.png" width="30" height="30"/> </form> </div> </div> </div><div id="table' +
+    ola +
+    '"></div>';
+  document.getElementById("table" + nTable).innerHTML = txt;
+  nTable++;
+  document.getElementById("btn2").style.display = "none";
+  document.getElementById("help1").style.display = "none";
+  document.getElementById("novo1").style.display = "none";
 }
