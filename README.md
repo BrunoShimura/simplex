@@ -17,10 +17,16 @@ Fases do projeto
 ---------------------------------
 
 - [x] Página home (html / css)
-- [ ] Lógica (javascript)
+- [X] Lógica (javascript)
 - [ ] Ajustes finais
 
 Curiosidades
 ----------------------------------
 
 Projeto realizado na matéria de **Pesquisa operacional** no curso de **Ciências da computação**.
+
+Link do projeto
+---------------------------------
+
+[simplex](http://simplexunivem.epizy.com/) 
+
