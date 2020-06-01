@@ -37,7 +37,7 @@ function calcMatriz(p_matriz) {
   var v_in = p_matriz[0][indMaior];
   var v_out = p_matriz[indMenor][0];
   document.getElementById("tab").innerHTML +=
-    "<p>Troca Base: entra " +
+    "<p>Troca VB: entra " +
     v_in.substr(0, 1) +
     "<sub>" +
     v_in.substr(1, 1) +
@@ -112,8 +112,6 @@ function esconder(p_variaveis, p_restricoes) {
     document.getElementById("b" + j).style.border = "0";
     document.getElementById("b" + j).readOnly = true;
   }
-  document.getElementById("btn2").style.display = "none";
-  document.getElementById("btn3").style.display = "none";
 }
 
 function validarCoeficientes(p_variaveis, p_restricoes) {
@@ -329,7 +327,7 @@ function resolver() {
   esconder(variaveis, restricoes);
 
   matriz = [[]];
-  matriz[0][0] = "Base";
+  matriz[0][0] = "VB";
 
   var indice = 1;
   for (var l = 1; l <= variaveis; l++) {

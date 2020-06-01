@@ -31,16 +31,15 @@
             <div class="form-group ">
               <h6>Quantas variáveis de decisão tem o problema? </h6>
               <div class="col-100">
-                <input type="number" class="input" size="5%" maxlength="10" id="in1" name="variaveis" value="" min="1" autocomplete="off" autofocus style="height: 28px"/>
-              </div>
+                <input type="number" class="inp1" size="5%" maxlength="10" id="in1" name="variaveis" value="" min="1" autocomplete="off" autofocus style="height: 28px"/>              </div>
             </div>
             <div class="form-group ">
               <h6>Quantas restrições?</h6>
               <div class="col-100">
-                <input type="number" class="input" size="5%" maxlength="10" id="in2" name="regras" value="" min="1" autocomplete="off" style="height: 28px" />
+                <input type="number" class="inp1" size="5%" maxlength="10" id="in2" name="regras" value="" min="1" autocomplete="off" style="height: 28px" />
               </div>
             </div>
-            <button type="button" class="btn btn-primary" id="btn1" name="ok" value="ok" onClick="criarForm(variaveis.value,regras.value)">Continuar</button>
+						<input type="button" class="inp1 btn btn-primary btn-sm" id="btn1" name="ok" value="ok" onClick="criarForm(variaveis.value,regras.value)"/>
           </form>
       </div>
     </div>
@@ -53,7 +52,7 @@
     <div id="aqui"></div>
     <br/>
     <label><input type="button" class="btn btn-primary btn-sm" id="btn2" name="calc" value="Resolver" onClick="resolver()" /></label>
-    <label><input type="reset" class="btn btn-secondary btn-sm" id="btn3" name="novo" value="Novo" onClick="atualizar()"/></label>
+    <label><input type="reset" class="btn btn-success btn-sm" id="btn3" name="novo" value="Novo" onClick="atualizar()"/></label>
 
   </form>
 </div>
@@ -62,7 +61,7 @@
   <div class="card bg-light text-dark">
     <div class="card-body">
   <div id="tab" style="width: 80%; margin: 0 auto;"></div>
-  <label><input type="hidden" class="btn btn-secondary btn-sm" id="btn4" name="novo2" value="Novo" onClick="atualizar()"/></label>
+  <label><input type="hidden" class="btn btn-success btn-sm" id="btn4" name="novo2" value="Novo" onClick="atualizar()"/></label>
 </div>
 </div>
 
