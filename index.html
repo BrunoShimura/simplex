@@ -1,72 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-  <script type="text/javascript" href="js/bootstrap.js"></script>
-  <script type="text/javascript" src="fraction.js" charset="UTF-8"></script>
-  <script type="text/javascript" src="main.js" charset="UTF-8"></script>
-  <link rel="icon" href="img/univem.png" />
-  <title>Simplex</title>
-</head>
-<body>
-  <div class="jumbotron text-center">
-    <img class="img-responsive" src="img/univem.png" width="105" height="100">
-    <h1>Simplex</h1>
-    <p><strong>Simplex</strong> é um algoritmo criado pelo matemático George Dantzig que viabiliza a solução de muitos
-      problemas da
-      programação linear.</p>
-      <img onClick="manual()" type="submit" id="help" class="img-responsive" src="img/help.png" width="30" height="30"/>
-
-  </div>
-  <form name="form1">
-  <div class="container p-3 my-3 border">
-    <div class="card bg-light text-dark">
-      <div class="card-body">
-        <h4 class="card-title">Informe os valores:</h4>
-        <form>
-          <div class="form-group">
-            <div class="form-group ">
-              <h6>Quantas variáveis de decisão tem o problema? </h6>
-              <div class="col-100">
-                <input type="number" class="inp1" size="5%" maxlength="10" id="in1" name="variaveis" value="" min="1" autocomplete="off" autofocus style="height: 28px"/>              </div>
-            </div>
-            <div class="form-group ">
-              <h6>Quantas restrições?</h6>
-              <div class="col-100">
-                <input type="number" class="inp1" size="5%" maxlength="10" id="in2" name="regras" value="" min="1" autocomplete="off" style="height: 28px" />
-              </div>
-            </div>
-						<input type="button" class="inp1 btn btn-primary btn-sm" id="btn1" name="ok" value="ok" onClick="criarForm(variaveis.value,regras.value)"/>
-          </form>
-      </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <script type="text/javascript" href="js/bootstrap.js"></script>
+    <script type="text/javascript" src="fraction.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="min.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="max.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="main.js" charset="UTF-8"></script>
+    <link rel="icon" href="img/univem.png" />
+    <title>Simplex</title>
+  </head>
+  <body>
+    <div class="jumbotron text-center">
+      <img
+        class="img-responsive"
+        src="img/univem.png"
+        width="105"
+        height="100"
+      />
+      <h1>Simplex</h1>
+      <p>
+        <strong>Simplex</strong> é um algoritmo criado pelo matemático George
+        Dantzig que viabiliza a solução de muitos problemas da programação
+        linear.
+      </p>
+      <img
+        type="button"
+        id="help"
+        class="img-responsive"
+        src="img/help.png"
+        width="30"
+        onClick="help()"
+        height="30"
+      />
     </div>
-  </div>
-  <h1></h1>
-    <div class="card bg-light text-dark">
-      <div class="card-body">
-  <form action="" method="post" name="form2" id="form2" style="display:none">
-    <p><b>Função objetivo</b></p>
-    <div id="aqui"></div>
-    <br/>
-    <label><input type="button" class="btn btn-primary btn-sm" id="btn2" name="calc" value="Resolver" onClick="resolver()" /></label>
-    <label><input type="reset" class="btn btn-success btn-sm" id="btn3" name="novo" value="Novo" onClick="atualizar()"/></label>
-
-  </form>
-</div>
-</div>
-<h1></h1>
-  <div class="card bg-light text-dark">
-    <div class="card-body">
-  <div id="tab" style="width: 80%; margin: 0 auto;"></div>
-  <label><input type="hidden" class="btn btn-success btn-sm" id="btn4" name="novo2" value="Novo" onClick="atualizar()"/></label>
-</div>
-</div>
-
-  </div>
-  </form>
-</body>
-
+    <div class="container p-3 my-3 border">
+      <div class="card bg-light text-dark">
+        <div class="card-body">
+          <h4 class="card-title">Informe os valores:</h4>
+          <form name="form1">
+            <div class="form-group">
+              <div class="form-group">
+                <h6>Quantas variáveis de decisão tem o problema?</h6>
+                <div class="col-100">
+                  <input
+                    class="form-control"
+                    type="number"
+                    id="in1"
+                    name="variaveis"
+                    value=""
+                    id="example-number-input"
+                  />
+                </div>
+                <div class="form-group">
+                  <h6>Quantas restrições?</h6>
+                </div>
+                <div class="col-100">
+                  <input
+                    class="form-control"
+                    type="number"
+                    id="in2"
+                    name="regras"
+                    value=""
+                    id="example-number-input"
+                  />
+                </div>
+              </div>
+              <button
+                type="button"
+                id="btn1"
+                onClick="criarForm(variaveis.value,regras.value)"
+                class="btn btn-primary"
+              >
+                Continuar
+              </button>
+              <img
+                id="img1"
+                class="img-responsive"
+                src="img/help.png"
+                width="30"
+                onClick="help()"
+                height="30"
+                type="button"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+      <h1></h1>
+      <div id="formulario"></div>
+      <h1></h1>
+      <div id="tabela"></div>
+    </div>
+  </body>
 </html>
