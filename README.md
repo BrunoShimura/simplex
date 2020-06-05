@@ -28,5 +28,5 @@ Projeto realizado na matéria de **Pesquisa operacional** no curso de **Ciência
 Link do projeto
 ---------------------------------
 
-[simplex](http://simplexunivem.epizy.com/) 
+[simplex](https://simplex-three.now.sh/) 
 
