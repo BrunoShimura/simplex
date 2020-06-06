@@ -53,6 +53,7 @@ function matrizMin() {
           if (document.getElementById("d" + i).value == ">=") {
             matriz[i][j] = -1;
             matriz[i][variaveis + variaveis + a] = 1;
+            matriz[parseInt(restricoes) + 1][j] = 1;
             a++;
           }
         }

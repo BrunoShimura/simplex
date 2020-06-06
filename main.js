@@ -1,3 +1,4 @@
+var tab = 1;
 function criarForm(variaveis, restricoes) {
   if (variaveis > 0 && restricoes > 0) {
     var vari = "";
@@ -126,10 +127,15 @@ function validarCoeficientes(p_variaveis, p_restricoes) {
   }
 }
 function matriz() {
-  if (document.getElementById("objetivo").value == "max") {
-    matrizMax();
+  var restricoes = parseInt(document.form1.regras.value);
+  var variaveis = parseInt(document.form1.variaveis.value);
+  if (validarCoeficientes(variaveis, restricoes)) {
   } else {
-    matrizMin();
+    if (document.getElementById("objetivo").value == "max") {
+      matrizMax();
+    } else {
+      matrizMin();
+    }
   }
 }
 function tabela(matriz, folga) {
@@ -137,6 +143,7 @@ function tabela(matriz, folga) {
   var variaveis = parseInt(document.form1.variaveis.value);
   var total = folga + variaveis;
   var top = "";
+  var ola = parseInt(tab) + 1;
 
   for (var i = 0; i <= total + 1; i++) {
     top += '<th scope="col">' + matriz[0][i] + "</th>";
@@ -156,7 +163,45 @@ function tabela(matriz, folga) {
     ' <div class="card bg-light text-dark"> <div class="card-body"> <h4 class="card-title">Tabela:</h4> <form> <div class="form-group"> <table class="table table-striped"><thead> <tr>' +
     top +
     "</tr> </thead><tbody>" +
-    body;
-  ('</tbody></table> <button type="button" onClick="criarForm(variaveis.value,regras.value)" class="btn btn-primary"> Continuar </button> <button type="button" onClick="novo()" class="btn btn-secondary"> Novo </button> <img class="img-responsive" src="img/help.png" width="30" onClick="help()" height="30" type="button"/> </form> </div> </div>  ');
-  document.getElementById("tabela").innerHTML = text;
+    body +
+    '</tbody></table> <button type="button" onClick="" class="btn btn-primary"> Continuar </button> <button type="button" onClick="novo()" class="btn btn-secondary"> Novo </button> <img class="img-responsive" src="img/help.png" width="30" onClick="help()" height="30" type="button"/> </div> </div> </form> </div></div><h1> </h1><div id="tabela' +
+    ola +
+    '"></div> ';
+  document.getElementById("tabela" + tab).innerHTML = text;
+  tab++;
+}
+
+function tabelaSai(matriz, folga, x, y) {
+  var restricoes = parseInt(document.form1.regras.value);
+  var variaveis = parseInt(document.form1.variaveis.value);
+  var total = folga + variaveis;
+  var top = "";
+  var ola = parseInt(tab) + 1;
+
+  for (var i = 0; i <= total + 1; i++) {
+    top += '<th scope="col">' + matriz[0][i] + "</th>";
+  }
+
+  var body = "";
+
+  for (var j = 1; j <= restricoes + 1; j++) {
+    body += '<tr> <th scope="row ">' + matriz[j][0] + "</th>";
+    for (var i = 1; i <= total + 1; i++) {
+      if (x == j || y == i)
+        body += ' <td class="bg-info">' + matriz[j][i] + "</td>";
+      else body += " <td>" + matriz[j][i] + "</td>";
+    }
+    body += "</tr>";
+  }
+
+  var text =
+    ' <div class="card bg-light text-dark"> <div class="card-body"> <h4 class="card-title">Tabela:</h4> <form> <div class="form-group"> <table class="table table-striped"><thead> <tr>' +
+    top +
+    "</tr> </thead><tbody>" +
+    body +
+    '</tbody></table> <button type="button" onClick="" class="btn btn-primary"> Continuar </button> <button type="button" onClick="novo()" class="btn btn-secondary"> Novo </button> <img class="img-responsive" src="img/help.png" width="30" onClick="help()" height="30" type="button"/> </div> </div> </form> </div></div><h1> </h1><div id="tabela' +
+    ola +
+    '"></div> ';
+  document.getElementById("tabela" + tab).innerHTML = text;
+  tab++;
 }
