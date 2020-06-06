@@ -45,12 +45,15 @@ function matrizMax() {
       }
     }
   } else {
+    var a = 1;
     for (i = 1; i <= parseInt(restricoes) + 1; i++) {
       for (j = 1; j <= total + 1; j++) {
+        if (matriz[i][0] == matriz[0][j]) matriz[i][j] = 1;
         if (matriz[i][0] == matriz[0][j]) {
           if (document.getElementById("d" + i).value == ">=") {
             matriz[i][j] = -1;
-            matriz[i][j + 1] = 1;
+            matriz[i][variaveis + variaveis + a] = 1;
+            a++;
           }
         }
         if (matriz[i][j] == null) matriz[i][j] = 0;
