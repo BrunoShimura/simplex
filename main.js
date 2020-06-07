@@ -50,7 +50,7 @@ function criarForm(variaveis, restricoes) {
       vari +
       ' </div> </div> <br> <div class="form-group "> ' +
       rest +
-      '</div> <button type="button" onClick="matriz()" class="btn btn-primary">Continuar </button>  <button type="button" onClick="criarForm(variaveis.value,regras.value)" class="btn btn-primary">Solução direta</button> <button type="button" onClick="novo()" class="btn btn-secondary"> Novo </button> <img class="img-responsive" src="img/help.png" width="30" onClick="help()" height="30" type="button"/></div> </div> </form> </div></div>';
+      '</div> <button type="button" onClick="matriz()" class="btn btn-primary">Passo a passo</button>  <button type="button" onClick="criarForm(variaveis.value,regras.value)" class="btn btn-primary">Solução direta</button> <button type="button" onClick="novo()" class="btn btn-secondary"> Novo </button> <img class="img-responsive" src="img/help.png" width="30" onClick="help()" height="30" type="button"/></div> </div> </form> </div></div>';
 
     document.getElementById("formulario").innerHTML = text;
     document.getElementById("in1").disabled = true;
@@ -225,8 +225,11 @@ function alertTabelaSai(matriz, folga, x, y) {
     body += '<tr> <th scope="row ">' + matriz[j][0] + "</th>";
     for (var i = 1; i <= total + 1; i++) {
       if (x == j && y == i)
-        body += ' <td class="bg-info">' + matriz[j][i] + "</td>";
-      else body += " <td>" + matriz[j][i] + "</td>";
+        body +=
+          ' <td class="bg-info">' +
+          parseFloat(matriz[j][i]).toFixed(2) +
+          "</td>";
+      else body += " <td>" + parseFloat(matriz[j][i]).toFixed(2) + "</td>";
     }
     body += "</tr>";
   }
