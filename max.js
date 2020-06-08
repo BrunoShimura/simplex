@@ -91,11 +91,15 @@ function calculaMatriz(matriz, folga) {
 
   for (var j = 1; j <= total + 1; j++) {
     if (matriz[restricoes + 1][j] < menor) {
+      //Condição de entrada na base: o menor valor negativo na linha Z
+      //(ou o de maior valor absoluto entre os negativos) indica a variável Pj que entra na base.
       menor = matriz[restricoes + 1][j];
       y = j;
     }
   }
   for (var i = 1; i <= restricoes; i++) {
+    //Condição de saída da base: depois de obter a variável de entrada,
+    //determina-se a variável de saída por meio do menor quociente P0/Pj dos valores estritamente positivos.
     div = parseFloat(matriz[i][total + 1]) / parseFloat(matriz[i][y]);
     if (div < maior) {
       maior = div;
@@ -119,8 +123,8 @@ function calculaMatriz(matriz, folga) {
     newMatriz[i] = ["f" + i];
     if (i == restricoes) newMatriz[i + 1] = ["Lucro"];
   }
-  for (var i = 1; i <= restricoes + 1; i++) {
-    for (var j = 1; j <= total + 1; j++) {
+  for (var i = 0; i <= restricoes + 1; i++) {
+    for (var j = 0; j <= total + 1; j++) {
       newMatriz[i][j] = matriz[i][j];
     }
   }
@@ -138,6 +142,7 @@ function calculaMatriz(matriz, folga) {
     }
   }
   tabelaSai(newMatriz, folga, x, y);
+
   return newMatriz;
 }
 //==============================================================================
@@ -147,9 +152,10 @@ function condicaoParada(matriz, folga) {
   var restricoes = parseInt(document.form1.regras.value);
   var variaveis = parseInt(document.form1.variaveis.value);
   var total = folga + variaveis;
-  alert(matriz[restricoes + 1][0]);
   for (var i = 1; i <= total + 1; i++) {
+    //Critério de parada: quando na linha Z não aparece nenhum valor negativo.
     if (matriz[restricoes + 1][i] < 0) return 0;
   }
+
   return 1;
 }

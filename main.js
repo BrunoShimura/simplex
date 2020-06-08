@@ -164,7 +164,7 @@ function tabela(matriz, folga) {
     top +
     "</tr> </thead><tbody>" +
     body +
-    '</tbody></table> <button type="button" onClick="" class="btn btn-primary"> Continuar </button> <button type="button" onClick="novo()" class="btn btn-secondary"> Novo </button> <img class="img-responsive" src="img/help.png" width="30" onClick="help()" height="30" type="button"/> </div> </div> </form> </div></div><h1> </h1><div id="tabela' +
+    '</tbody></table> </div> </div> </form> </div></div><h1> </h1><div id="tabela' +
     ola +
     '"></div> ';
   document.getElementById("tabela" + tab).innerHTML = text;
@@ -202,7 +202,7 @@ function tabelaSai(matriz, folga, x, y) {
     top +
     "</tr> </thead><tbody>" +
     body +
-    '</tbody></table> <button type="button" onClick="" class="btn btn-primary"> Continuar </button> <button type="button" onClick="novo()" class="btn btn-secondary"> Novo </button> <img class="img-responsive" src="img/help.png" width="30" onClick="help()" height="30" type="button"/> </div> </div> </form> </div></div><h1> </h1><div id="tabela' +
+    '</tbody></table>  </div> </div> </form> </div></div><h1> </h1><div id="tabela' +
     ola +
     '"></div> ';
   document.getElementById("tabela" + tab).innerHTML = text;
@@ -239,7 +239,114 @@ function alertTabelaSai(matriz, folga, x, y) {
     top +
     "</tr> </thead><tbody>" +
     body +
-    '</tbody></table> <button type="button" onClick="" class="btn btn-primary"> Continuar </button> <button type="button" onClick="novo()" class="btn btn-secondary"> Novo </button> <img class="img-responsive" src="img/help.png" width="30" onClick="help()" height="30" type="button"/> </div> </div> </form> </div></div><h1> </h1><div id="tabela' +
+    '</tbody></table> <div id="fim"></div> </div> </div> </form> </div></div><h1> </h1><div id="tabela' +
+    ola +
+    '"></div> ';
+  document.getElementById("tabela" + tab).innerHTML = text;
+  tab++;
+}
+function tabela2(matriz, folga) {
+  var restricoes = parseInt(document.form1.regras.value);
+  var variaveis = parseInt(document.form1.variaveis.value);
+  var total = folga + variaveis;
+  var top = "";
+  var ola = parseInt(tab) + 1;
+
+  for (var i = 0; i <= total + 1; i++) {
+    top += '<th scope="col">' + matriz[0][i] + "</th>";
+  }
+
+  var body = "";
+
+  for (var j = 1; j <= restricoes + 2; j++) {
+    body += '<tr> <th scope="row">' + matriz[j][0] + "</th>";
+    for (var i = 1; i <= total + 1; i++) {
+      body += " <td>" + matriz[j][i] + "</td>";
+    }
+    body += "</tr>";
+  }
+
+  var text =
+    ' <div class="card bg-light text-dark"> <div class="card-body"> <h4 class="card-title">Tabela:</h4> <form> <div class="form-group"> <table class="table table-striped"><thead> <tr>' +
+    top +
+    "</tr> </thead><tbody>" +
+    body +
+    '</tbody></table> </div> </div> </form> </div></div><h1> </h1><div id="tabela' +
+    ola +
+    '"></div> ';
+  document.getElementById("tabela" + tab).innerHTML = text;
+  tab++;
+}
+
+function tabelaSai2(matriz, folga, x, y) {
+  var restricoes = parseInt(document.form1.regras.value);
+  var variaveis = parseInt(document.form1.variaveis.value);
+  var total = folga + variaveis;
+  var top = "";
+  var ola = parseInt(tab) + 1;
+
+  for (var i = 0; i <= total + 1; i++) {
+    top += '<th scope="col">' + matriz[0][i] + "</th>";
+  }
+
+  var body = "";
+
+  for (var j = 1; j <= restricoes + 2; j++) {
+    body += '<tr> <th scope="row ">' + matriz[j][0] + "</th>";
+    for (var i = 1; i <= total + 1; i++) {
+      if (x == j || y == i)
+        body +=
+          ' <td class="bg-info">' +
+          parseFloat(matriz[j][i]).toFixed(2) +
+          "</td>";
+      else body += " <td>" + parseFloat(matriz[j][i]).toFixed(2) + "</td>";
+    }
+    body += "</tr>";
+  }
+
+  var text =
+    ' <div class="card bg-light text-dark"> <div class="card-body"> <h4 class="card-title">Tabela:</h4> <form> <div class="form-group"> <table class="table table-striped"><thead> <tr>' +
+    top +
+    "</tr> </thead><tbody>" +
+    body +
+    '</tbody></table>  </div> </div> </form> </div></div><h1> </h1><div id="tabela' +
+    ola +
+    '"></div> ';
+  document.getElementById("tabela" + tab).innerHTML = text;
+  tab++;
+}
+function alertTabelaSai2(matriz, folga, x, y) {
+  var restricoes = parseInt(document.form1.regras.value);
+  var variaveis = parseInt(document.form1.variaveis.value);
+  var total = folga + variaveis;
+  var top = "";
+  var ola = parseInt(tab) + 1;
+
+  for (var i = 0; i <= total + 1; i++) {
+    top += '<th scope="col">' + matriz[0][i] + "</th>";
+  }
+
+  var body = "";
+
+  for (var j = 1; j <= restricoes + 2; j++) {
+    body += '<tr> <th scope="row ">' + matriz[j][0] + "</th>";
+    for (var i = 1; i <= total + 1; i++) {
+      if (x == j && y == i)
+        body +=
+          ' <td class="bg-info">' +
+          parseFloat(matriz[j][i]).toFixed(2) +
+          "</td>";
+      else body += " <td>" + parseFloat(matriz[j][i]).toFixed(2) + "</td>";
+    }
+    body += "</tr>";
+  }
+
+  var text =
+    ' <div class="card bg-light text-dark"> <div class="card-body"> <h4 class="card-title">Tabela:</h4> <form> <div class="form-group"> <table class="table table-striped"><thead> <tr>' +
+    top +
+    "</tr> </thead><tbody>" +
+    body +
+    '</tbody></table> <div id="fim"></div> </div> </div> </form> </div></div><h1> </h1><div id="tabela' +
     ola +
     '"></div> ';
   document.getElementById("tabela" + tab).innerHTML = text;
