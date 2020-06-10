@@ -50,7 +50,7 @@ function criarForm(variaveis, restricoes) {
       vari +
       ' </div> </div> <br> <div class="form-group "> ' +
       rest +
-      '</div> <button type="button" onClick="matriz()" class="btn btn-primary">Passo a passo</button>  <button type="button" onClick="criarForm(variaveis.value,regras.value)" class="btn btn-primary">Solução direta</button> <button type="button" onClick="novo()" class="btn btn-secondary"> Novo </button> <img class="img-responsive" src="img/help.png" width="30" onClick="help()" height="30" type="button"/></div> </div> </form> </div></div>';
+      '</div> <button type="button" onClick="matriz()" class="btn btn-primary">Passo a passo</button> <button type="button" onClick="novo()" class="btn btn-secondary"> Novo </button> <img class="img-responsive" src="img/help.png" width="30" onClick="help()" height="30" type="button"/></div> </div> </form> </div></div>';
 
     document.getElementById("formulario").innerHTML = text;
     document.getElementById("in1").disabled = true;
