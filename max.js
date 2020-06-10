@@ -48,7 +48,7 @@ function matrizMax() {
       }
     }
   } else {
-    var a = 1;
+    var a = 0;
     for (i = 1; i <= parseInt(restricoes) + 1; i++) {
       for (j = 1; j <= total + 1; j++) {
         if (matriz[i][0] == matriz[0][j]) matriz[i][j] = 1;
@@ -101,7 +101,7 @@ function calculaMatriz(matriz, folga) {
     //Condição de saída da base: depois de obter a variável de entrada,
     //determina-se a variável de saída por meio do menor quociente P0/Pj dos valores estritamente positivos.
     div = parseFloat(matriz[i][total + 1]) / parseFloat(matriz[i][y]);
-    if (div < maior) {
+    if (div < maior && div > 0) {
       maior = div;
       x = i;
     }
