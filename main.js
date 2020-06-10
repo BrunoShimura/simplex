@@ -134,7 +134,13 @@ function matriz() {
     if (document.getElementById("objetivo").value == "max") {
       matrizMax();
     } else {
-      matrizMin();
+      var folga = 0;
+      for (var m = 1; m <= restricoes; m++) {
+        if (document.getElementById("d" + m).value == ">=") folga += 2;
+        else folga += 1;
+      }
+      if (folga == restricoes) matrizMin2();
+      else matrizMin();
     }
   }
 }

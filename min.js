@@ -221,7 +221,7 @@ function matrizMin2() {
   matriz[0][matriz[0].length] = "b";
   for (var i = 1; i <= restricoes; i++) {
     matriz[i] = ["f" + i];
-    if (i == restricoes) matriz[i + 1] = ["Lucro"];
+    if (i == restricoes) matriz[i + 1] = ["- Lucro"];
   }
   for (i = 1; i <= variaveis; i++) {
     matriz[parseInt(restricoes) + 1][i] =
