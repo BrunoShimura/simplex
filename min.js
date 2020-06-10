@@ -153,7 +153,7 @@ function calculaMatrizMin(matriz, folga) {
   for (var i = 1; i <= restricoes; i++) {
     newMatriz[i] = ["f" + i];
     if (i == restricoes) {
-      newMatriz[i + 1] = ["Lucro"];
+      newMatriz[i + 1] = ["- Lucro"];
       newMatriz[i + 2] = ["- Auxiliar"];
     }
   }
