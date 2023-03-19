@@ -24,9 +24,3 @@ Curiosidades
 ----------------------------------
 
 Projeto realizado na matéria de **Pesquisa operacional** no curso de **Ciências da computação**.
-
-Link do projeto
----------------------------------
-
-[simplex](https://simplex-three.now.sh/) 
-
